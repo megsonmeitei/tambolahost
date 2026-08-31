@@ -1045,11 +1045,22 @@ function updateDashboard(){
   renderInlineClaimTicket();
   renderClaimPlayerOptions();
 }
+let hostNumberAudio=null;
 function speak(n){
-  if(!('speechSynthesis' in window)) return;
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(n===undefined?'':`Number ${n}`);
-  u.rate=.85; u.pitch=1; speechSynthesis.speak(u);
+  if(n===undefined || n===null || n==='') return;
+  try{
+    if(hostNumberAudio){ hostNumberAudio.pause(); hostNumberAudio.currentTime=0; }
+    hostNumberAudio=new Audio(`sounds/${n}.mp3`);
+    hostNumberAudio.preload='auto';
+    hostNumberAudio.volume=1;
+    hostNumberAudio.play().catch(err=>{
+      console.warn('MP3 voice failed, trying browser speech:',err);
+      if(!('speechSynthesis' in window)) return;
+      speechSynthesis.cancel();
+      const u=new SpeechSynthesisUtterance(`Number ${n}`);
+      u.rate=.85; u.pitch=1; u.volume=1; speechSynthesis.speak(u);
+    });
+  }catch(err){ console.warn('Voice failed:',err); }
 }
 function callNext(){
   if(!state.started) return alert('Press Start Game first.');
