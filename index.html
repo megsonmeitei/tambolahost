@@ -187,188 +187,149 @@
       #claimTypeEditor .claim-editor > *{width:100%}
     }
 
+</style>
 
-/* Mobile display optimization */
+<style>
+/* ===== Premium Tambola UI 2026 — visual override only ===== */
+:root{
+  --bg:#05070b !important;
+  --panel:#0d121a !important;
+  --panel2:#121a25 !important;
+  --text:#f7f9fc !important;
+  --muted:#8e9aad !important;
+  --accent:#f4c542 !important;
+  --accent2:#ffe084 !important;
+  --danger:#ff5f6d !important;
+  --success:#38d996 !important;
+  --border:#202b39 !important;
+  --blue:#5aa7ff !important;
+  --shadow:0 18px 55px rgba(0,0,0,.34);
+  --ring:0 0 0 3px rgba(244,197,66,.13);
+}
+html{background:#05070b;color-scheme:dark}
+body{
+  background:
+    radial-gradient(circle at 12% -10%,rgba(244,197,66,.12),transparent 30%),
+    radial-gradient(circle at 100% 0%,rgba(90,167,255,.09),transparent 28%),
+    linear-gradient(145deg,#05070b 0%,#080d14 48%,#060910 100%) !important;
+  background-attachment:fixed;
+  color:var(--text) !important;
+  letter-spacing:.01em;
+}
+::selection{background:rgba(244,197,66,.32);color:#fff}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-track{background:#070b11}
+::-webkit-scrollbar-thumb{background:#263344;border-radius:999px;border:2px solid #070b11}
+::-webkit-scrollbar-thumb:hover{background:#35465c}
+.card,.loginbox,.modal-box{
+  background:linear-gradient(145deg,rgba(18,25,35,.95),rgba(10,15,23,.96)) !important;
+  border:1px solid rgba(255,255,255,.075) !important;
+  box-shadow:var(--shadow) !important;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.card{border-radius:20px !important}
+.logo{
+  background:linear-gradient(145deg,#ffe586,#eebd31) !important;
+  color:#17120a !important;
+  box-shadow:0 8px 24px rgba(244,197,66,.2),inset 0 1px 0 rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.28);
+}
+.brand h1{font-weight:900;letter-spacing:-.02em}
+.muted{color:var(--muted) !important}
+.btn{
+  min-height:42px;
+  border-radius:12px !important;
+  border:1px solid rgba(255,255,255,.09) !important;
+  background:linear-gradient(180deg,#1b2532,#151d28) !important;
+  color:#f7f9fc !important;
+  box-shadow:0 7px 18px rgba(0,0,0,.18);
+  transition:transform .16s ease,filter .16s ease,border-color .16s ease,box-shadow .16s ease !important;
+}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.08);border-color:#3b4a5e !important}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn-primary{
+  background:linear-gradient(135deg,#ffe180,#efbc2e) !important;
+  border-color:#f4c542 !important;color:#17120a !important;
+  box-shadow:0 10px 25px rgba(244,197,66,.18) !important;
+}
+.btn-success{background:linear-gradient(135deg,#14382b,#18513b) !important;border-color:#267251 !important;color:#a8f3ce !important}
+.btn-danger{background:linear-gradient(135deg,#351a20,#491d25) !important;border-color:#71303a !important;color:#ffadb5 !important}
+input,select{
+  background:#090e15 !important;
+  border:1px solid #263343 !important;
+  color:#f7f9fc !important;
+  border-radius:12px !important;
+  min-height:44px;
+  transition:border-color .16s ease,box-shadow .16s ease,background .16s ease;
+}
+input:focus,select:focus{border-color:#9b8132 !important;box-shadow:var(--ring) !important;background:#0b111a !important;outline:none}
+input::placeholder{color:#657287}
+.badge,.status-pill{
+  background:linear-gradient(180deg,#151e29,#101720) !important;
+  border:1px solid #273445 !important;
+  color:#dce3ed !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+table{border-spacing:0}
+th{color:#94a1b5 !important;text-transform:uppercase;letter-spacing:.055em;font-weight:800}
+tbody tr{transition:background .15s ease}
+tbody tr:hover{background:rgba(255,255,255,.025)}
+th,td{border-bottom-color:#202b39 !important}
+.dot.ok,.dot.live,.dot{transition:.2s ease}
+
+aside{background:linear-gradient(180deg,rgba(7,10,15,.98),rgba(9,13,20,.98)) !important;border-right:1px solid #1f2a37 !important;box-shadow:12px 0 34px rgba(0,0,0,.12)}
+.nav button{min-height:44px;border-radius:12px !important;color:#aeb9c8 !important;font-weight:720;transition:.16s ease !important}
+.nav button:hover{background:#121b27 !important;color:#fff !important;transform:translateX(2px)}
+.nav button.active{background:linear-gradient(90deg,rgba(244,197,66,.17),rgba(244,197,66,.055)) !important;color:#ffe38a !important;box-shadow:inset 3px 0 0 #f4c542}
+main{max-width:1700px;width:100%;margin:0 auto}
+.topbar,.top{padding-bottom:5px}
+.stats{gap:13px !important}
+.stat{position:relative;overflow:hidden}
+.stat:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,rgba(244,197,66,.42),transparent)}
+.stat strong{letter-spacing:-.035em}
+.toolbar{align-items:center}
+.toolbar input,.toolbar select{min-width:190px}
+@media(max-width:900px){
+ body{padding-bottom:72px}
+ aside{position:relative !important;padding:12px 12px 0 !important;border-right:0 !important;box-shadow:none !important}
+ aside .brand{padding:0 4px 10px}
+ .nav{position:fixed;left:8px;right:8px;bottom:8px;z-index:500;display:flex !important;overflow-x:auto;background:rgba(9,13,20,.94);border:1px solid #253142;border-radius:17px;padding:6px;box-shadow:0 14px 45px rgba(0,0,0,.45);backdrop-filter:blur(16px)}
+ .nav button{flex:0 0 auto;margin:0 2px !important;padding:10px 12px !important;min-height:44px}
+ .nav button.active{box-shadow:inset 0 -3px 0 #f4c542 !important;background:rgba(244,197,66,.12) !important}
+ main{padding:14px 11px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:9px !important}
+ .card{border-radius:16px !important}.top,.topbar{align-items:flex-start !important;flex-wrap:wrap}
+}
+@media(max-width:520px){
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.stat{padding:13px !important}.stat strong{font-size:22px !important}
+ .toolbar input,.toolbar select,.toolbar .btn{width:100% !important;min-width:0}.toolbar{gap:7px !important}
+}
+
+.current-number{background:radial-gradient(circle at 34% 28%,#fff4c2,#f5cb54 42%,#d5a91f) !important;box-shadow:0 0 0 10px rgba(244,197,66,.045),0 24px 60px rgba(244,197,66,.20) !important}
+.num.called,.pick-num:not(.used):hover{background:linear-gradient(145deg,#ffe180,#edbb30) !important;color:#17120a !important;border-color:#f4c542 !important}
+.pick-num,.num{background:#0a1018 !important;border-color:#263343 !important}
+.claim-item,.claim-alert{background:linear-gradient(145deg,#101823,#0b1119) !important;border-color:#263343 !important}
+.ticket-card{box-shadow:0 18px 42px rgba(0,0,0,.28)}
+#hostLoginScreen{background:radial-gradient(circle at 50% 0%,rgba(244,197,66,.11),transparent 30%),#05070b !important}
+#hostLoginScreen>div{background:linear-gradient(145deg,#111924,#0a0f17) !important;border:1px solid #263343 !important;box-shadow:0 25px 70px rgba(0,0,0,.48) !important}
+@media(max-width:760px){.caller-actions .btn{flex:1 1 calc(50% - 10px)}.pick-board{grid-template-columns:repeat(6,minmax(0,1fr)) !important}}
+
+
+/* Final Host app polish */
+.game-code-row{margin-top:9px;display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.game-setup-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;margin-top:12px}
+.ticket-rate-field{margin:0;min-width:180px}.ticket-rate-field input{width:180px}
+.host-status-banner{display:flex;align-items:center;gap:9px;margin:-4px 0 16px;padding:11px 14px;border:1px solid #263343;border-radius:13px;background:linear-gradient(90deg,#0c131d,#0a1018);color:#aeb9c8;font-size:13px}
+.host-status-icon{color:#8e9aad}.host-status-banner.live{border-color:rgba(56,217,150,.35);background:linear-gradient(90deg,rgba(56,217,150,.09),#0a1018)}.host-status-banner.live .host-status-icon{color:#38d996;box-shadow:0 0 12px rgba(56,217,150,.45)}
+.host-status-banner.paused{border-color:rgba(244,197,66,.35)}.host-status-banner.paused .host-status-icon{color:#f4c542}.host-status-banner.ended .host-status-icon{color:#ff8994}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #f4c542 !important;outline-offset:2px}
 @media(max-width:760px){
-  html,body{width:100%;max-width:100%;overflow-x:hidden}
-  body{font-size:14px}
-  .app{display:block!important;width:100%;min-width:0}
-  aside{
-    position:static!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    padding:10px!important;
-    border-right:0!important;
-    border-bottom:1px solid var(--border);
-  }
-  .brand{margin-bottom:8px!important}
-  .brand .logo{width:38px;height:38px}
-  .brand h1{font-size:16px}
-  .brand p{font-size:11px}
-  .nav{
-    display:flex!important;
-    overflow-x:auto;
-    gap:5px;
-    padding-bottom:3px;
-    scrollbar-width:thin;
-  }
-  .nav button{
-    width:auto!important;
-    min-width:max-content;
-    margin:0!important;
-    padding:9px 11px!important;
-    font-size:13px;
-    white-space:nowrap;
-  }
-  main{width:100%;min-width:0;padding:10px!important}
-  .top{align-items:flex-start;gap:8px;margin-bottom:12px}
-  .top h2{font-size:20px}
-  .stats{
-    grid-template-columns:repeat(2,minmax(0,1fr))!important;
-    gap:8px!important;
-    margin-bottom:10px!important;
-  }
-  .card{padding:11px!important;border-radius:13px!important;min-width:0}
-  .stat strong{font-size:21px}
-  .grid{grid-template-columns:1fr!important;gap:10px!important}
-  .current-number{min-height:auto!important;padding:14px 8px!important}
-  .current-ball{
-    width:150px!important;
-    height:150px!important;
-    font-size:54px!important;
-    margin:10px auto!important;
-  }
-  .game-actions,.actions,.toolbar{
-    gap:7px!important;
-    justify-content:center;
-  }
-  .btn{
-    padding:9px 10px!important;
-    font-size:13px!important;
-  }
-  input,select{max-width:100%;font-size:14px}
-  .claim-board-layout{display:block!important}
-  .claim-board-layout .board{
-    display:grid!important;
-    grid-template-columns:repeat(10,minmax(0,1fr))!important;
-    gap:3px!important;
-    width:100%!important;
-  }
-  .claim-board-layout .num{
-    width:100%!important;
-    min-width:0!important;
-    height:28px!important;
-    font-size:10px!important;
-    border-radius:5px!important;
-  }
-  .claim-ticket-inline{
-    margin-top:12px!important;
-    padding-top:12px!important;
-    padding-left:0!important;
-    border-left:0!important;
-    border-top:1px solid var(--border)!important;
-    width:100%!important;
-  }
-  .claim-ticket-inline > div:first-child{
-    grid-template-columns:1fr auto!important;
-    gap:6px!important;
-  }
-  .claim-ticket-inline h3{font-size:16px!important}
-  #inlineClaimMeta{font-size:11px!important}
-  #inlineClaimStatus{font-size:10px!important;padding:5px 7px!important}
-  .claim-ticket-inline .ticket-card{
-    width:100%!important;
-    max-width:100%!important;
-    padding:7px!important;
-    overflow:hidden!important;
-  }
-  .claim-ticket-inline .ticket-title{
-    font-size:14px!important;
-    margin-bottom:6px!important;
-  }
-  .claim-ticket-inline .tambola-ticket{
-    width:100%!important;
-    table-layout:fixed!important;
-    border-spacing:2px!important;
-  }
-  .claim-ticket-inline .tambola-ticket td{
-    width:auto!important;
-    min-width:0!important;
-    height:30px!important;
-    padding:0!important;
-    font-size:11px!important;
-  }
-  table{min-width:0}
-  th,td{padding:8px 5px;font-size:11px}
+ .card,.nav{backdrop-filter:blur(8px) !important;-webkit-backdrop-filter:blur(8px) !important}
+ .card{box-shadow:0 10px 30px rgba(0,0,0,.26) !important}
+ .game-setup-row>*{width:100%}.ticket-rate-field input{width:100%}.ticket-rate-field{min-width:0;width:100%}
+ #dashboardGenerateCodeBtn{width:100%}
 }
-@media(max-width:420px){
-  main{padding:7px!important}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .current-ball{width:125px!important;height:125px!important;font-size:46px!important}
-  .claim-board-layout .num{height:25px!important;font-size:9px!important}
-  .claim-ticket-inline .tambola-ticket td{height:27px!important;font-size:10px!important}
-  .btn{font-size:12px!important;padding:8px!important}
-}
-
-
-/* App/mobile shell */
-html,body{max-width:100%;overflow-x:hidden}
-button,input,select,textarea{max-width:100%}
-img,svg,canvas{max-width:100%}
-@media(max-width:760px){
-  body{font-size:14px;-webkit-text-size-adjust:100%}
-  .app{display:block!important;width:100%!important;min-width:0!important}
-  aside{
-    position:static!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    padding:10px!important;
-    border-right:0!important;
-    border-bottom:1px solid var(--border)!important;
-  }
-  .brand{margin-bottom:8px!important}
-  .nav{
-    display:flex!important;
-    gap:5px!important;
-    overflow-x:auto!important;
-    overflow-y:hidden!important;
-    white-space:nowrap!important;
-    padding-bottom:3px!important;
-    scrollbar-width:thin;
-  }
-  .nav button{
-    width:auto!important;
-    min-width:max-content!important;
-    white-space:nowrap!important;
-    margin:0!important;
-    padding:9px 11px!important;
-    font-size:13px!important;
-  }
-  main{width:100%!important;min-width:0!important;padding:10px!important}
-  .top{gap:8px!important;align-items:flex-start!important;flex-wrap:wrap!important}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
-  .card{min-width:0!important;padding:11px!important;border-radius:13px!important}
-  .toolbar{gap:7px!important}
-  .toolbar input,.toolbar select{width:100%!important;min-width:0!important}
-  table{width:100%!important}
-  .btn{font-size:12px!important;padding:8px 10px!important}
-}
-@media(max-width:430px){
-  main{padding:7px!important}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .stat strong{font-size:20px!important}
-}
-
-@media(max-width:760px){
-  .section{width:100%!important;min-width:0!important}
-  .card[style*="overflow:auto"]{overflow-x:auto!important}
-  .ticket-card{max-width:100%!important}
-  .tambola-ticket{width:100%!important;table-layout:fixed!important}
-  .tambola-ticket td{width:auto!important;min-width:0!important}
-}
-
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto !important;animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
 </style>
 </head>
 <body>
@@ -411,20 +372,22 @@ img,svg,canvas{max-width:100%}
         <div>
           <h2 id="gameTitle">Tambola Night</h2>
           <div class="muted">Host Control Room</div>
-          <div style="margin-top:8px;display:flex;gap:7px;flex-wrap:wrap"><span class="badge">Game Code: <strong id="gameCodeDisplay">----</strong>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
-          <div class="field" style="margin-top:12px">
-<label>Ticket Rate (₹)</label>
-<input id="ticketRateInput" type="number" min="0" step="1" placeholder="Example: 100">
-</div>
-<button class="btn btn-primary" id="dashboardGenerateCodeBtn">🎲 Generate Game Code</button>
-          <button class="btn" id="copyPlayerLinkBtn">🔗 Copy Player Link</button>
-        </div>
-        <small class="muted" id="copyLinkStatus"></small>
-        </span><span class="badge" id="firebaseStatus">Firebase: Connecting...</span></div>
+          <div class="game-code-row">
+            <span class="badge">Game Code: <strong id="gameCodeDisplay">----</strong></span>
+            <span class="badge" id="firebaseStatus">Firebase: Connecting...</span>
+          </div>
+          <div class="game-setup-row">
+            <div class="field ticket-rate-field">
+              <label>Ticket Rate (₹)</label>
+              <input id="ticketRateInput" type="number" min="0" step="1" placeholder="Example: 100">
+            </div>
+            <button class="btn btn-primary" id="dashboardGenerateCodeBtn">🎲 Generate Game Code</button>
+          </div>
         </div>
         <div class="status"><span class="dot"></span><span id="gameState">Game Ready</span></div>
       </div>
+
+      <div class="host-status-banner" id="hostStatusBanner"><span class="host-status-icon">●</span><span><strong>Game Control:</strong> <span id="hostStatusText">Ready for setup</span></span></div>
 
       <div class="stats">
         <div class="card stat"><p>Called Numbers</p><strong id="calledCount">0</strong></div>
@@ -623,6 +586,8 @@ let firebaseDb=null;
 let firebaseStateRef=null;
 let firebaseClaimsRef=null;
 let firebaseBoundCode='';
+let hostAccountStatusRef=null;
+let hostAccountStatusKey='';
 let firebaseApplyingRemote=false;
 let lastFirebaseClaimsJSON=JSON.stringify(state.playerClaims||[]);
 
@@ -633,6 +598,20 @@ function firebaseConfigReady(){
 function stateForFirebase(){
   const copy=JSON.parse(JSON.stringify(state));
   delete copy.playerClaims;
+
+  // Normalize ticket booking state before publishing to Player.
+  copy.players=(Array.isArray(copy.players)?copy.players:[]).map(player=>({
+    ...player,
+    status:String(player?.status||'unbooked').toLowerCase()==='booked'?'booked':'unbooked'
+  }));
+
+  // Always publish the logged-in Host identity with the live room.
+  const hostSession=getHostSession()||{};
+  copy.hostId=String(hostSession.id||copy.hostId||'');
+  copy.hostUsername=String(hostSession.username||copy.hostUsername||'');
+  copy.hostName=String(hostSession.name||copy.hostName||copy.host||'Host');
+  if(!copy.host) copy.host=copy.hostName;
+
   return copy;
 }
 function claimsToObject(arr){
@@ -657,6 +636,9 @@ function normalizeStateAfterRemote(remote){
   state.prizeAmounts=state.prizeAmounts&&typeof state.prizeAmounts==='object'?state.prizeAmounts:{};
   state.started=Boolean(state.started);
   state.paused=Boolean(state.paused);
+  state.hostId=String(state.hostId||'');
+  state.hostUsername=String(state.hostUsername||'');
+  state.hostName=String(state.hostName||state.host||'');
 }
 function renderEverything(){
   updateDashboard();
@@ -768,6 +750,7 @@ function initFirebase(){
   try{
     if(!firebase.apps.length)firebase.initializeApp(window.TAMBOLA_FIREBASE_CONFIG);
     firebaseDb=firebase.database();
+  setTimeout(watchHostAccountStatus,0);
 
     firebaseDb.ref('.info/connected').on('value',snap=>{
       if(snap.val()===true){
@@ -804,11 +787,15 @@ function save(){
 
 function adminAuditEvent(type, details={}){
   if(!firebaseDb || !state.gameCode) return;
+  const hostSession=getHostSession()||{};
   const ref=firebaseDb.ref('tambolaAdminEvents').push();
   ref.set({
     id:ref.key,
     type,
     source:'host',
+    hostId:String(hostSession.id||''),
+    hostUsername:String(hostSession.username||''),
+    hostName:String(hostSession.name||state.host||'Host'),
     gameCode:String(state.gameCode||''),
     title:String(state.title||'Tambola Night'),
     ticketRate:String(state.ticketRate||''),
@@ -821,24 +808,73 @@ function adminAuditEvent(type, details={}){
 
 function saveCompletedGameToAdmin(){
   if(!firebaseDb || !state.gameCode) return;
+
+  const players=Array.isArray(state.players)?state.players:[];
+  const approved=Array.isArray(state.playerClaims)
+    ? state.playerClaims.filter(c=>String(c?.status||'').toLowerCase()==='approved')
+    : [];
+
+  const ticketRate=Number(state.ticketRate)||0;
+  const bookedTickets=players.filter(p=>String(p?.status||'unbooked').toLowerCase()==='booked').length;
+  const totalTicketSales=ticketRate*bookedTickets;
+
+  // Build the payout from approved player claims first.
+  const paidPrizeNames=new Set();
+  let totalPrizePayout=approved.reduce((sum,c)=>{
+    const prize=String(c?.prize||'');
+    if(prize)paidPrizeNames.add(prize.trim().toLowerCase());
+    const direct=Number(c?.amount ?? c?.prizeAmount);
+    if(Number.isFinite(direct) && direct>0)return sum+direct;
+    return sum+(Number(state.prizeAmounts?.[prize])||0);
+  },0);
+
+  // Also count prizes manually declared by Host in the Claims panel.
+  // Avoid counting the same prize twice if it already exists as an approved player claim.
+  Object.entries(state.claims||{}).forEach(([prize,winner])=>{
+    if(!winner)return;
+    const key=String(prize||'').trim().toLowerCase();
+    if(!key || paidPrizeNames.has(key))return;
+    totalPrizePayout += Number(state.prizeAmounts?.[prize])||0;
+    paidPrizeNames.add(key);
+  });
+
+  const net=totalTicketSales-totalPrizePayout;
+  const profit=Math.max(net,0);
+  const loss=Math.max(-net,0);
+
+  const hostSession=getHostSession()||{};
   const historyId=`${state.gameCode}_${Date.now()}`;
   const snapshot={
     id:historyId,
     gameCode:String(state.gameCode||''),
     title:String(state.title||'Tambola Night'),
-    host:String(state.host||''),
+    host:String(state.host||hostSession.name||hostSession.username||'Host'),
+    hostId:String(hostSession.id||''),
+    hostUsername:String(hostSession.username||''),
+    hostName:String(hostSession.name||state.host||'Host'),
     endedAt:Date.now(),
     endedTime:new Date().toLocaleString(),
     called:Array.isArray(state.called)?[...state.called]:[],
-    players:Array.isArray(state.players)?JSON.parse(JSON.stringify(state.players)):[],
+    players:JSON.parse(JSON.stringify(players)),
     claims:state.claims&&typeof state.claims==='object'?JSON.parse(JSON.stringify(state.claims)):{},
     playerClaims:Array.isArray(state.playerClaims)?JSON.parse(JSON.stringify(state.playerClaims)):[],
     prizeTypes:Array.isArray(state.prizeTypes)?[...state.prizeTypes]:[],
     prizeAmounts:state.prizeAmounts&&typeof state.prizeAmounts==='object'?JSON.parse(JSON.stringify(state.prizeAmounts)):{},
+
+    // Financial snapshot used by Admin History / Profit & Loss.
+    ticketRate,
+    bookedTickets,
+    totalTicketSales,
+    totalPrizePayout,
+    netProfitLoss:net,
+    profit,
+    loss,
+
     totalCalled:Array.isArray(state.called)?state.called.length:0,
-    totalPlayers:Array.isArray(state.players)?state.players.length:0,
-    approvedClaims:Array.isArray(state.playerClaims)?state.playerClaims.filter(c=>c.status==='approved').length:0
+    totalPlayers:players.length,
+    approvedClaims:approved.length
   };
+
   firebaseDb.ref(`tambolaAdminHistory/${historyId}`).set(snapshot)
     .catch(err=>console.warn('Admin history write failed:',err));
 }
@@ -1045,22 +1081,11 @@ function updateDashboard(){
   renderInlineClaimTicket();
   renderClaimPlayerOptions();
 }
-let hostNumberAudio=null;
 function speak(n){
-  if(n===undefined || n===null || n==='') return;
-  try{
-    if(hostNumberAudio){ hostNumberAudio.pause(); hostNumberAudio.currentTime=0; }
-    hostNumberAudio=new Audio(`sounds/${n}.mp3`);
-    hostNumberAudio.preload='auto';
-    hostNumberAudio.volume=1;
-    hostNumberAudio.play().catch(err=>{
-      console.warn('MP3 voice failed, trying browser speech:',err);
-      if(!('speechSynthesis' in window)) return;
-      speechSynthesis.cancel();
-      const u=new SpeechSynthesisUtterance(`Number ${n}`);
-      u.rate=.85; u.pitch=1; u.volume=1; speechSynthesis.speak(u);
-    });
-  }catch(err){ console.warn('Voice failed:',err); }
+  if(!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(n===undefined?'':`Number ${n}`);
+  u.rate=.85; u.pitch=1; speechSynthesis.speak(u);
 }
 function callNext(){
   if(!state.started) return alert('Press Start Game first.');
@@ -1472,6 +1497,10 @@ function archiveCurrentGame(){
 function endGame(){
   if(!state.started && !state.called.length)return alert('No active game to end.');
   if(!confirm('End this game? All connected players will be logged out.'))return;
+
+  // Capture the latest rate/prize values before creating the permanent history snapshot.
+  syncGameCommercialDetails();
+
   archiveCurrentGame();
   saveCompletedGameToAdmin();
   adminAuditEvent('game_ended',{
@@ -1531,11 +1560,12 @@ function startAuto(useDashboard=false){
     }
   },sec*1000);
 }
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{
-  document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));
+document.querySelectorAll('.nav button[data-page]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.nav button[data-page]').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(b.dataset.page).classList.add('active');
+  const page=document.getElementById(b.dataset.page);
+  if(page) page.classList.add('active');
   if(b.dataset.page==='players')renderPlayers();
   if(b.dataset.page==='claims'){renderClaims();renderClaimTypeEditor();renderPrizeOptions();}
   if(b.dataset.page==='history')renderHistory();
@@ -1563,6 +1593,79 @@ function hideHostLogin(){
 function getHostSession(){
   try{return JSON.parse(localStorage.getItem(HOST_LOGIN_KEY)||'null')}catch(e){return null}
 }
+
+function stopHostAccountStatusWatch(){
+  if(hostAccountStatusRef){
+    try{ hostAccountStatusRef.off(); }catch(e){}
+  }
+  hostAccountStatusRef=null;
+  hostAccountStatusKey='';
+}
+
+function forceHostLogoutDisabled(message='Your Host account has been disabled by Admin.'){
+  stopAuto();
+  stopHostAccountStatusWatch();
+
+  try{ localStorage.removeItem(HOST_LOGIN_KEY); }catch(e){}
+
+  const screen=document.getElementById('hostLoginScreen');
+  if(screen)screen.style.display='flex';
+
+  const err=document.getElementById('hostLoginError');
+  if(err)err.textContent=message;
+
+  const pass=document.getElementById('hostLoginPass');
+  if(pass)pass.value='';
+
+  // Do not continue controlling the room after Admin disables this account.
+  if(firebaseStateRef){ try{ firebaseStateRef.off(); }catch(e){} }
+  if(firebaseClaimsRef){ try{ firebaseClaimsRef.off(); }catch(e){} }
+  firebaseStateRef=null;
+  firebaseClaimsRef=null;
+  firebaseBoundCode='';
+}
+
+function watchHostAccountStatus(){
+  if(!firebaseDb)return;
+  const session=getHostSession();
+  if(!session)return;
+
+  const key=String(session.id||session.username||'').trim().toLowerCase()
+    .replace(/[^a-z0-9._-]/g,'_');
+  if(!key)return;
+
+  if(hostAccountStatusKey===key && hostAccountStatusRef)return;
+
+  stopHostAccountStatusWatch();
+  hostAccountStatusKey=key;
+  hostAccountStatusRef=firebaseDb.ref(`tambolaHostAccounts/${key}`);
+
+  hostAccountStatusRef.on('value',snap=>{
+    const account=snap.val();
+
+    // Deleted or disabled account = immediate logout.
+    if(!account || account.active===false){
+      forceHostLogoutDisabled(
+        !account
+          ? 'This Host account was removed by Admin.'
+          : 'Your Host account has been disabled by Admin.'
+      );
+      return;
+    }
+
+    // Keep the local session identity synchronized with Admin data.
+    const current=getHostSession()||{};
+    const next={
+      ...current,
+      id:String(account.id||key),
+      username:String(account.username||current.username||''),
+      name:String(account.name||current.name||account.username||'Host'),
+      active:true
+    };
+    try{ localStorage.setItem(HOST_LOGIN_KEY,JSON.stringify(next)); }catch(e){}
+  });
+}
+
 async function hostLogin(){
   const user=($('#hostLoginUser')?.value||'').trim();
   const pass=$('#hostLoginPass')?.value||'';
@@ -1618,6 +1721,7 @@ async function hostLogin(){
   }
 }
 function hostLogout(){
+  stopHostAccountStatusWatch();
   if(!confirm('Log out from Host dashboard?')) return;
   const s=getHostSession();
   if(s)adminAuditEvent('host_logged_out',{hostId:s.id,username:s.username,name:s.name});
@@ -1649,52 +1753,159 @@ async function restoreHostLogin(){
   }
 }
 
-function generateGameCodeNow(){
+async function generateGameCodeNow(){
+  // Read the latest ticket rate entered on the dashboard.
+  syncGameCommercialDetails();
+
+  const ticketRate=Number(state.ticketRate||0);
+  if(!Number.isFinite(ticketRate) || ticketRate<=0){
+    alert('Ticket Rate is mandatory. Enter a ticket rate greater than ₹0 before generating the game code.');
+    const rateEl=$('#ticketRateInput');
+    if(rateEl){
+      rateEl.focus();
+      rateEl.scrollIntoView({behavior:'smooth',block:'center'});
+    }
+    return '';
+  }
+
+  const prizes=Array.isArray(state.prizeTypes)?state.prizeTypes:[];
+  if(!prizes.length){
+    alert('At least one prize is required before generating the game code.');
+    return '';
+  }
+
+  const missingPrizeAmounts=prizes.filter(name=>{
+    const raw=state.prizeAmounts?.[name];
+    const amount=Number(raw);
+    return raw===undefined || raw===null || raw==='' || !Number.isFinite(amount) || amount<=0;
+  });
+
+  if(missingPrizeAmounts.length){
+    alert(
+      'Prize Amount is mandatory for every prize.\n\nPlease enter an amount greater than ₹0 for:\n• ' +
+      missingPrizeAmounts.join('\n• ')
+    );
+
+    const claimsNav=document.querySelector('[data-page="claims"]');
+    if(claimsNav)claimsNav.click();
+    return '';
+  }
+
+  const totalPrizeAmount=prizes.reduce((sum,name)=>sum+Number(state.prizeAmounts?.[name]||0),0);
+
+  const confirmed=confirm(
+    `Generate a NEW game code?\n\n` +
+    `This will RESET the current game and log out all connected players.\n\n` +
+    `Ticket Rate: ₹${ticketRate.toLocaleString('en-IN')}\n` +
+    `Prizes: ${prizes.length}\n` +
+    `Total Prize Amount: ₹${totalPrizeAmount.toLocaleString('en-IN')}\n\n` +
+    `Press OK to continue.`
+  );
+
+  if(!confirmed)return '';
+
+  const oldCode=String(state.gameCode||'').trim().toUpperCase();
+
+  try{
+    // End the OLD room first. Player apps watching this room will see started=false
+    // and can immediately return to the join/login screen.
+    if(firebaseDb && oldCode){
+      const oldRoomRef=firebaseDb.ref(`tambolaRooms/${oldCode}`);
+      const endedGame={
+        ...stateForFirebase(),
+        started:false,
+        paused:false,
+        ended:true,
+        endedAt:Date.now(),
+        endReason:'new_game_code_generated'
+      };
+
+      await oldRoomRef.child('game').set(endedGame);
+      await oldRoomRef.child('claims').remove();
+    }
+  }catch(err){
+    console.error('Could not close old game room:',err);
+    alert('Could not close the current room in Firebase. New game code was not generated.\n\n'+(err?.message||err));
+    return '';
+  }
+
+  stopAuto();
+
+  // Preserve configuration needed for the next game.
+  const keepTitle=state.title||'Tambola Night';
+  const keepHost=state.host||'';
+  const keepAutoSeconds=state.autoSeconds||8;
+  const keepPrizeTypes=[...prizes];
+  const keepPrizeAmounts=JSON.parse(JSON.stringify(state.prizeAmounts||{}));
+  const keepTicketRate=String(ticketRate);
+  const keepHistories=Array.isArray(state.histories)?state.histories:[];
+
+  // Completely reset all GAME-SPECIFIC data.
+  state.called=[];
+  state.players=[];
+  state.claims={};
+  state.playerClaims=[];
+  state.paused=false;
+  state.started=false;
+  state.currentNumber=null;
+
+  // IMPORTANT: the old room briefly writes these logout/end flags back through
+  // the Firebase listener. Never carry them into the newly generated room.
+  delete state.ended;
+  delete state.endedAt;
+  delete state.endReason;
+  delete state.forcePlayerLogout;
+  delete state.gameOver;
+  delete state.completed;
+
+  // Keep host/game setup for the newly generated room.
+  state.title=keepTitle;
+  state.host=keepHost;
+  state.autoSeconds=keepAutoSeconds;
+  state.prizeTypes=keepPrizeTypes;
+  state.prizeAmounts=keepPrizeAmounts;
+  state.ticketRate=keepTicketRate;
+  state.histories=keepHistories;
+
   state.gameCode='TMB-'+Math.random().toString(36).slice(2,6).toUpperCase();
-  if($('#gameCodeInput')) $('#gameCodeInput').value=state.gameCode;
-  save();
-  updateDashboard();
+  state.ended=false;
+  state.endReason='';
+  state.forcePlayerLogout=false;
+
+  // Force Firebase binding to move from the old room to the new room.
+  if(firebaseStateRef)firebaseStateRef.off();
+  if(firebaseClaimsRef)firebaseClaimsRef.off();
+  firebaseStateRef=null;
+  firebaseClaimsRef=null;
+  firebaseBoundCode='';
+
+  lastFirebaseClaimsJSON=JSON.stringify([]);
+  lastSeenClaimIds=new Set();
+
+  if($('#gameCodeInput'))$('#gameCodeInput').value=state.gameCode;
+
+  localStorage.setItem('tambolaHostState',JSON.stringify(state));
+
+  if(firebaseDb){
+    bindFirebaseGame(state.gameCode);
+    await firebaseDb.ref(`tambolaRooms/${state.gameCode}/claims`).remove().catch(()=>{});
+  }
+
+  renderEverything();
+  loadGameCommercialDetails();
+
+  adminAuditEvent('new_game_code_generated',{
+    oldGameCode:oldCode,
+    newGameCode:state.gameCode,
+    reset:true,
+    playersLoggedOut:true
+  });
+
+  showHostToast(`New clean game created — ${state.gameCode}`);
   return state.gameCode;
 }
 
-function getPlayerJoinLink(){
-  const code=String(state.gameCode||'').trim().toUpperCase();
-  if(!code)return '';
-  const playerUrl=new URL('player.html', window.location.href);
-  playerUrl.search='';
-  playerUrl.hash='';
-  playerUrl.searchParams.set('game',code);
-  return playerUrl.href;
-}
-
-async function copyPlayerJoinLink(){
-  const code=String(state.gameCode||'').trim().toUpperCase();
-  if(!code){
-    alert('Generate a game code first.');
-    return;
-  }
-  const link=getPlayerJoinLink();
-  const status=$('#copyLinkStatus');
-
-  try{
-    if(navigator.clipboard && window.isSecureContext){
-      await navigator.clipboard.writeText(link);
-      if(status) status.textContent=`Copied: ${link}`;
-      showHostToast(`Player link copied — Game ${code}`);
-    }else{
-      // Works as a fallback on file:// or browsers where clipboard API is unavailable.
-      window.prompt('Copy this Player link:',link);
-      if(status) status.textContent='Player link ready to copy.';
-    }
-  }catch(err){
-    console.error(err);
-    window.prompt('Copy this Player link:',link);
-    if(status) status.textContent='Player link ready to copy.';
-  }
-}
-
 $('#dashboardGenerateCodeBtn')?.addEventListener('click',generateGameCodeNow);
-$('#copyPlayerLinkBtn')?.addEventListener('click',copyPlayerJoinLink);
 $('#callBtn').onclick=callNext;
 $('#repeatBtn').onclick=()=>state.called.length?speak(state.called[state.called.length-1]):alert('No number called yet.');
 $('#startBtn').onclick=()=>{
@@ -1777,7 +1988,18 @@ $('#autoSeconds').value=state.autoSeconds||8;
 $('#dashboardAutoSeconds').value=state.autoSeconds||8;
 $('#gameCodeInput').value=state.gameCode||'';
 (state.players||[]).forEach(p=>{if(!p.status)p.status='unbooked'});
-updateDashboard();renderPlayers();renderClaims();renderHistory();renderClaimPlayerOptions();renderPrizeOptions();renderClaimTypeEditor();renderDashboardClaims();
+updateDashboard();renderPlayers();renderClaims();renderHistory();renderClaimPlayerOptions();renderPrizeOptions();renderClaimTypeEditor();renderDashboardClaims();updateHostStatusBanner();
+
+function updateHostStatusBanner(){
+  const text=document.getElementById('hostStatusText');
+  const banner=document.getElementById('hostStatusBanner');
+  if(!text||!banner)return;
+  banner.classList.remove('live','paused','ended');
+  if(state.started && state.paused){text.textContent='Game paused';banner.classList.add('paused');}
+  else if(state.started){text.textContent='Game live — numbers can be called';banner.classList.add('live');}
+  else if((state.called||[]).length){text.textContent='Game ended — generate a new game when ready';banner.classList.add('ended');}
+  else{text.textContent='Ready for setup';}
+}
 
 window.addEventListener('beforeunload',e=>{
   if(state && state.started){
@@ -1787,6 +2009,8 @@ window.addEventListener('beforeunload',e=>{
 });
 
 
+const gameStateEl=document.getElementById('gameState');
+if(gameStateEl){new MutationObserver(updateHostStatusBanner).observe(gameStateEl,{childList:true,subtree:true,characterData:true});}
 $('#hostLoginBtn')?.addEventListener('click',hostLogin);
 $('#hostLoginPass')?.addEventListener('keydown',e=>{if(e.key==='Enter')hostLogin();});
 $('#hostLoginUser')?.addEventListener('keydown',e=>{if(e.key==='Enter')hostLogin();});
@@ -1810,6 +2034,8 @@ setTimeout(restoreHostLogin,500);
     </div>
   </div>
 </div>
+
+
 
 </body>
 </html>
